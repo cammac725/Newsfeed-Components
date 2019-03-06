@@ -33,6 +33,8 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Preprocessor Setup
 
+** DONE **
+
   * Run `less-watch-compiler less css index.less` from the top level of the Newsfeed-Components folder. 
   * Open index.html in your browser
 
