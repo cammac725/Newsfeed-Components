@@ -1,5 +1,9 @@
 .articles {
   margin-top: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 .article {
   margin: 20px 10%;
@@ -39,10 +43,15 @@
     transform: translate(-50%);
     background-color: white;
   }
+
 }
 
 .article-open {
   height: 400px;
+}
+
+.order-top {
+  order: -1;
 }
 
 
