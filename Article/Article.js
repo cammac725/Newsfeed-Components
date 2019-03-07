@@ -10,26 +10,28 @@ class Article {
     this.expandButton.textContent = "expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', this.expandArticle.bind(this));
-
   }
-
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle('article-open');
     this.domElement.classList.toggle('order-top');
-    TweenMax.to('.article-open', 1, { scale: 1.1 });
   }
 }
-
-/* START HERE: 
-
-- Select all classes named ".article" and assign that value to the articles variable.  
-
-- With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList and create a new instance of Article by passing in each article as a parameter to the Article class.
-
-*/
 
 let articles = document.querySelectorAll('.article');
 articles.forEach(function (article) {
   return new Article(article);
 })
+
+const chosenArticle = document.querySelectorAll('.article');
+chosenArticle.forEach(function (item) {
+  item.addEventListener('mouseover', () => {
+    TweenMax.to(item, 0.5, { scale: 1.05 });
+  });
+});
+chosenArticle.forEach(function (item) {
+  item.addEventListener('mouseleave', () => {
+    TweenMax.to(item, 0.5, { scale: 1 });
+  });
+});
+
